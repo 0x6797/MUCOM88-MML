@@ -479,7 +479,7 @@ G           | r1        | r1         | r1
 ;   ADPCM
 ;   @1  : Kick1
 ;   @2  : Snare1
-;   
+;   @3  : Crash Cymbal
 ;   @4  : Kick + Crash Cymbal
 ;   @5  : Tom 1
 ;   @6  : Tom 2
