@@ -1,0 +1,105 @@
+#mucom88 1.7
+#title イースⅡ (To Make the End of Battle)
+#composer Yuzo Koshiro
+#auther 0x6797(mokumoku)
+#voice voice.dat
+#comment 
+#driver mucom88
+
+; --------------------------------------------------------------------
+; 　　FM 音色定義
+; --------------------------------------------------------------------
+  @240:{
+   0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0,"Mute"}
+
+; --------------------------------------------------------------------
+;   マクロ定義
+; --------------------------------------------------------------------
+; ミュートしたい音色は `@240` に置換してください。
+# *1{  @95 o6 }
+# *2{  @194 o6 }
+
+# *106{M16,1,4,10 }
+# *107{M8,1,5,8 }
+# *108{M8,1,8,8 }
+# *9{  @240 }
+
+; --------------------------------------------------------------------
+;   チャンネル定義
+; --------------------------------------------------------------------
+A   C96  t218 K0 l8  o4 *2        v8   p3 D0  q6
+B   C96       K0 l8  o4 *2        v8   p3 D0  q6
+C   C96       K0 l8  o3 *2        v8   p3 D0  q6
+H   C96       K0 l8  o3 *1        v1   p3 D0  q8
+I   C96       K0 l8  o3 *1        v1   p3 D0  q8
+J   C96       K0 l8  o3 *1        v1   p3 D0  q8
+
+A         | r4 |
+B         | r4 |
+C         | r4 |
+H         | r4 |
+I         | r4 |
+J         | r4 |
+
+A     [ | f  f  f  f  f  f  f  f ]2 
+A       | b- b- b- b- b- b- b- b-
+A       | a  a  a  a  a  a  a  a
+A     [ | f  f  f  f  f  f  f  f ]2 
+A       | b- b- b- b- b- b- b- b-
+A       | a  a  a  a  a  q0 ((a32g32f32e32d32c32<b32a32))
+
+B       | d  d  d  d  d  d  d d 
+B       | c  c  c  c  c  c  c c 
+B       | f  f  f  f  f  f  f f
+B       | e  e  e  e  e  e  e e
+B       | d  d  d  d  d  d  d d 
+B       | c  c  c  c  c  c  c c 
+B       | f  f  f  f  f  f  f f
+B       | e  e  e  e  e  q0 ((e32d32c32<b32a32g32f32e32))
+
+C    <[ | a  a  a  a  a  a  a  a ]2
+C    >  | d  d  d  d  d  d  d  d
+C       | c+ c+ c+ c+ c+ c+ c+ c+
+C    <[ | a  a  a  a  a  a  a  a ]2
+C    >  | d  d  d  d  d  d  d  d
+C       | c+ c+ c+ c+ c+ q0 ((a32g32f32e32d32c32<b32a32))
+
+H     [ | f  f  f  f  f  f   f  f ]2 
+H       | b- b- b- b- b- b-  b- b-
+H       | a  a  a  a  a  a   a  a
+H     [ | f  f  f  f  f  f   f  f ]2 
+H       | b- b- b- b- b- b-  b- b-
+H       | a  a  a  a  a  q0 {a4<a} *9 a
+
+I       | d  d  d  d  d  d  d  d
+I       | c  c  c  c  c  c  c  c
+I       | f  f  f  f  f  f  f  f
+I       | e  e  e  e  e  e  e  e
+I       | d  d  d  d  d  d  d  d
+I       | c  c  c  c  c  c  c  c
+I       | f  f  f  f  f  f  f  f
+I       | e  e  e  e  e  q0 {e4<e} *9 e
+
+J    <[ | a  a  a  a  a  a  a  a ]2
+J    >  | d  d  d  d  d  d  d  d
+J       | c+ c+ c+ c+ c+ c+ c+ c+
+J    <[ | a  a  a  a  a  a  a  a]2
+J    >  | d  d  d  d  d  d  d  d
+J       | c+ c+ c+ c+ c+ q0 {a4<a} *9 a
+
+
+
+
+A   r1
+B   r1
+C   r1
+D   r1
+E   r1
+F   r1
+H   r1
+I   r1
+J   r1

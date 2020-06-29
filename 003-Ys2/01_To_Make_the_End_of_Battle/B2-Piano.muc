@@ -1,0 +1,158 @@
+#mucom88 1.7
+#title イースⅡ (To Make the End of Battle)
+#composer Yuzo Koshiro
+#auther 0x6797(mokumoku)
+#voice voice.dat
+#comment 
+#driver mucom88
+
+; --------------------------------------------------------------------
+; 　　FM 音色定義
+; --------------------------------------------------------------------
+  @240:{
+   0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0
+  31, 31, 31, 15, 15,127,  0,  0,  0,"Mute"}
+
+; --------------------------------------------------------------------
+;   マクロ定義
+; --------------------------------------------------------------------
+; ミュートしたい音色は `@240` に置換してください。
+# *30{ @117 o5 }
+# *31{ @199 o6 }
+# *32{ @1 o6 }
+# *33{ @2 o5 }
+# *9{  @240 }
+
+; --------------------------------------------------------------------
+;   チャンネル定義
+; --------------------------------------------------------------------
+A   C96  t218 K0 l8  o4           v10  p2 D0 
+B   C96       K0 l8  o4           v9   p1 D0 
+C   C96       K0 l8  o3           v4   p1 D0
+H   C96       K0 l8  o3           v7   p2 D0
+I   C96       K0 l8  o3           v7   p2 D0
+J   C96       K0 l8  o3           v7   p1 D0
+
+A         | r4 |
+B         | r4 |
+C         | r4 |
+H         | r4 |
+I         | r4 |
+J         | r4 |
+D         | r4 |
+E         | r4 |
+F         | r4 |
+
+A  MF0 D0   q0
+A  *30  |  d r (3 d- r ) <b r> ) d-r  ) 
+A  *30  | e16&f16(e)cc+32&d16.&d2&
+B  MF0 D-4  q0 M16,1,2,10
+B  *31  | (2 d4 ( d-4 ) <b4> ) d-4 )
+B       | f(e)cd&d2&
+C  MF0 D-2  q0 M16,1,6,10
+C  *32  | (2 d4 ( d-4 ) <b4> ) d-4 )
+C       | e16&f16(e)cc+32&d16.&d2&
+H  MF0 D-2  q0 M16,1,4,10
+H  *33  | (2 d4 ( d-4 ) <b4> ) d-4 )
+H       | e16&f16(e)cc+32&d16.&d2&
+I  MF0 D0   q0
+I  *30  | (2 <a4 ( a4 ) g4 ) a4> )
+I       | d(c)<gg+32&a16.&a2&
+J  MF0 D-4 p1       q0 M16,1,2,10
+J  *31  | (2 <a4 ( a4 ) g4 ) a4> )
+J       | d(c)<ga&a2&
+
+A       | d4.c16<b16 a>cdc
+B       | d2 <a>cdc
+C       | d2 <a>cdc
+H       | d2 <a>cdc
+I       | a2 r2
+J       | a2 r2
+
+A       | f(e)cc+32&d16.&d2&
+B       | fecd&d2&
+C       | fecd&d2&
+H       | fecd&d2&
+I       |>d(c)<gg+32&a16.&a2&
+J       |>dc<ga&a2&
+        
+A       | d16^4.<g16 agfe
+B       | d2        <agfe
+C       | d2        <agfe
+H       | d2        <agfe
+I       | a2 r2
+J       | a2 r2
+
+A       | f4&(e16&e-16)d4.f4
+B       | f4.d4.f4
+C       | f4.d4.f4
+H       | f4.d4.f4
+I       | d4&(c16&<b16)a4.>d4
+J       | d4.<a4.>d4
+
+A       | g4(g-16&f16)e4.g4
+B       | g4.e4.g4
+C       | g4.e4.g4
+H       | g4.e4.g4
+I       | e4(d16&d-16)c4.e4
+J       | e4.c4.e4
+
+A       | a4.f4. d4
+B       | a4.f4. d4
+C       | a4.f4. d4
+H       | a4.f4. d4
+I       | f4.d4.<a4
+J       | f4.d4.<a4
+
+
+A       | e4.g4.a16&b-8.
+B       | e4.g4.b-4
+C       | e4.g4.b-4
+H       | e4.g4.b-4
+I       |>d-4.e4.g4
+J       |>d-4.e4.g4
+
+A       | a1
+B       | a1
+C       | a1
+H       | a1
+I       | f1
+J       | f1
+
+A       |>defgg+32&a16.gfe
+B       |>defgagfe
+C       |>defgagfe
+H       |>defgagfe
+I       | a>cdefedc
+J       | a>cdefedc
+
+A       | g4(g-16&f16)e4.c4
+B       | g4.e4.c4
+C       | g4.e4.c4
+H       | g4.e4.c4
+I       | e4(d16&d-16)c4.<a4
+J       | e4.c4.<a4
+
+A       |<g4.>c4. e4
+B       |<g4.>c4. e4
+C       |<g4.>c4. e4
+H       |<g4.>c4. e4
+I       | e4. g4.>c4
+J       | e4. g4.>c4
+
+A       | fd<(af(d)f>d)f
+B       | fd<(af(d)f>d)f
+C       | fd<(af(d)f>d)f
+H       | fd<(af(d)f>d)f
+I       | d<a(fd(<a)>da)>d
+J       | d<a(fd(<a)>da)>d
+
+A       | ec<(ge(c)g>c)e
+B       | ec<(ge(c)g>c)e
+C       | ec<(ge(c)g>c)e
+H       | ec<(ge(c)g>c)e
+I       | c<g(ec(<g)>eg)>c
+J       | c<g(ec(<g)>eg)>c
